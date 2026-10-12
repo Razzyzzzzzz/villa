@@ -1,0 +1,32 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.7; -webkit-font-smoothing: antialiased; padding-bottom: env(safe-area-inset-bottom, 0px); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+ul { list-style: none; padding: 0; }
+button { font: inherit; cursor: pointer; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
+
+.container { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.section { padding: clamp(64px, 9vw, 110px) 0; }
+.section--alt { background: var(--bg-alt); }
+
+.eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sun); margin-bottom: 12px; }
+.eyebrow--light { color: #ffd2a8; }
+
+.heading { margin-bottom: 44px; max-width: 620px; }
+.heading--center { margin-inline: auto; text-align: center; }
+.heading h2 { font-size: clamp(30px, 4.4vw, 46px); }
+.heading p { color: var(--muted); margin-top: 12px; }
+
+.btn { display: inline-block; padding: 13px 28px; border: 2px solid var(--sun); border-radius: 999px; background: var(--sun); color: #fff; font-weight: 600; font-size: 15px; text-decoration: none; transition: transform .2s, background .2s, box-shadow .2s; }
+.btn:hover { background: var(--sun-dark); border-color: var(--sun-dark); transform: translateY(-2px); box-shadow: 0 10px 24px -10px var(--sun); }
+.btn--sm { padding: 8px 20px; font-size: 14px; }
+.btn--ghost { background: transparent; border-color: rgba(255, 255, 255, 0.85); }
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.16); border-color: #fff; box-shadow: none; }
+.btn--outline { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn--outline:hover { background: transparent; border-color: var(--sun); color: var(--sun); box-shadow: none; }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; transition-delay: var(--d, 0ms); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
